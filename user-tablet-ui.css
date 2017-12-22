@@ -1,0 +1,58 @@
+/* FHEM Tablet UI 2.6 - eigene Anpassungen */
+
+/* Phone-Header und Phone-Backbutton Definition */
+.phone-header {
+	display: none;
+}
+
+.phone-back-btn {
+	display: none;
+}
+
+
+/* Menübreite und Zeilenabstand der Menüpunkte korrigiert*/
+@media screen and (max-width: 900px) and (min-width: 480px) {
+	.menu {
+		width: 90px !important;
+	}
+}
+
+/* Menüleiste oben auf Bildschirmbreite angepasst, damit keine Elemente mehr überdeckt werden */
+@media screen and (max-width: 480px) {
+	.menu ~ main > .page {
+		padding-left: 0px;
+		padding-top: 40px;
+	}
+	.phone-header {
+        top: 0px;
+        left: 0px;
+		height: 40px;
+		width: 100%;
+		position: absolute;
+		background: #1D1F20;
+		z-index: 4;
+		display: block;
+	}
+	.phone-back-btn {
+        top: 0px;
+        left: 0px;
+		height: 39px;
+		width: 39px;
+        position: absolute;
+        background: #1D1F20;
+		padding-top: 0.31em;
+		z-index: 5;
+		display: block;
+	}
+}
+
+/* Header Hintergrundfarbe und Schriftgröße korrigiert */
+.card > header {
+    background-color: #e6e6e6;
+	font-size: 125%;
+}
+
+/* Weather Iconfarbe korrektur */
+.weather:before {
+    color: #337ab7;
+}

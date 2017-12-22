@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<!-- FHEM Tablet UI 2.6 -->
+
+<head>
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="debug" content="3">
+	<!-- verbose level 1-6 = output to console;0 = not output -->
+	<meta name='toast' content='0'>
+	<!-- keine Ausgabe von Protokollmeldungen -->
+
+	<link rel="stylesheet" href="css/fhem-mobil-ui.css" />
+	<link rel="stylesheet" href="user-tablet-ui.css" />
+	<script src="js/fhem-tablet-ui.js" defer></script>
+
+	<title>SmartHome</title>
+</head>
+
+<body>
+	<div class="phone-header"></div>
+
+	<nav class="menu">
+		<div class="menu-trigger"></div>
+		<header>Menu</header>
+		<ul>
+			<li>
+				<div data-type="link" data-url="#content_home.html" data-color="white" data-active-color="blue" data-width="115" data-load="#content_home" data-text-align="left" data-active-pattern="(.*index.html|.*#content_home.html)" data-icon="fa-home" class="large"><span>Home</span></div>
+			</li>
+			<li>
+				<div data-type="link" data-url="#content_light.html" data-color="white" data-active-color="blue" data-width="115" data-load="#content_light" data-text-align="left" data-active-pattern="(.*index.html|.*#content_light.html)" data-icon="mi-lightbulb_outline" class="large"><span>Licht</span></div>
+			</li>
+		</ul>
+	</nav>
+
+	<main>
+		<div class="page" id="content_home"></div>
+		<div class="page" id="content_light"></div>
+		<div class="page" id="content_socket"></div>		
+	</main>
+
+</body>
+
+</html>

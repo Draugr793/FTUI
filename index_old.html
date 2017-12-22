@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FHEM-Tablet-UI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="widget_base_width" content="60">
+    <meta name="widget_base_height" content="65">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="longpoll" content="1">
+    <!-- 1=longpoll;0=shortpoll every 30sec -->
+    <meta name="debug" content="0">
+    <!-- 1=output to console;0=not output -->
+    <meta name="widget_margin" content="3">
+    <meta name="gridster_disable" content="1">
+    <link rel="stylesheet" href="/fhem/tablet/lib/jquery.gridster.min.css" />
+    <link rel="stylesheet" href="/fhem/tablet/css/fhem-tablet-ui.css" />
+    <link rel="stylesheet" href="/fhem/tablet/lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="/fhem/tablet/lib/jquery.toast.min.css" />
+    <link rel="stylesheet" href="/fhem/tablet/lib/powerange.min.css" />
+    <link rel="stylesheet" href="/fhem/tablet/lib/openautomation.css" />
+    <!-- define your personal style here, it wont be overwritten  -->
+    <link rel="stylesheet" href="/fhem/tablet/css/fhem-tablet-ui-user.css" />
+    <script type="text/javascript" src="/fhem/pgm2/jquery.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/jquery.knob.mod.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/jquery.toast.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/jquery.circlemenu.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/powerange.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/jquery.gridster.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/lib/fa-multi-button.min.js"></script>
+    <script type="text/javascript" src="/fhem/tablet/js/fhem-tablet-ui.js"></script>
+</head>
+
+<body>
+    <div class="gridster">
+        <ul>
+            <!-- Home Start -->
+            <li data-row="1" data-col="1" data-sizex="5" data-sizey="1">
+                <div class="container" style="padding-top: 5px;">
+                    <div data-type="clock" data-format="H:i" class="inline great" style="vertical-align:top"></div>
+                    <div class="inline" style="vertical-align:top; padding-top: 10px;">
+                        <div class="container">
+                            <div data-type="clock" data-format="d" class="inline big" style="color: #aa6900;"></div>
+                            <div data-type="clock" data-format="F Y" class="inline small" style="vertical-align:top; padding-top: 2px;"></div>
+                        </div>
+                        <div data-type="clock" data-format="l" class="big" style="text-align: left"></div>
+                    </div>
+                </div>
+            </li>
+            <!-- Home Ende -->
+            <!-- Wohnungsstatus Start -->
+            <li data-row="2" data-col="1" data-sizex="5" data-sizey="1">
+            </li>
+            <!-- Wohnungsstatus Ende -->
+            <!-- Aktuelles Wetter Start -->
+            <li data-row="1" data-col="6" data-sizex="4" data-sizey="2">
+                <header>Wetter</header>
+                <div class="container" style="padding-top: 8px;">
+                    <div class="inline">
+                        <div data-type="weather" data-device="WetterBocholt" data-get="condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="temperature" data-unit="°C" class="bigger"></div>
+                    </div>
+                    <div class="inline left-space">
+                        <div>
+                            <div class="inline">
+                                <div data-type="wind_direction" data-device="WetterBocholt" data-direction="wind_direction" data-speed="wind_speed" data-calm="-" data-size="150" data-tickstep="45" data-angleoffset="0" class="mini"></div>
+                            </div>
+                            <div class="inline left-space">
+                                <div data-type="label" data-device="WetterBocholt" data-get="wind" data-unit="km/h" class=""></div>
+                                <div data-type="label" data-device="WetterBocholt" data-get="humidity" data-unit="%" class=""></div>
+                                <div data-type="label" data-device="WetterBocholt" data-get="wind_chill" data-unit="°C" class="large"></div>
+                            </div>
+                        </div>
+                        <div class="" style="border-top: solid 1px #333; margin-top: 5px; padding-top: 5px;">
+                            <div data-type="label" class="darker inline">Innen</div>
+                            <div data-type="label" data-device="WetterBocholt" data-get="temperature" data-unit="°C" class="big inline left-space"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Aktuelles Wetter Ende -->
+            <!-- Wettervorhersage Start -->
+            <li data-row="1" data-col="10" data-sizex="6" data-sizey="2">
+                <header>Vorhersage</header>
+                <div class="container" style="padding-top: 8px;">
+                    <div class="inline">
+                        <div data-type="label" class="darker">Heute</div>
+                        <div data-type="weather" data-device="WetterBocholt" data-get="fc1_condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc1_low_c" data-unit="°C" class=""></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc1_high_c" data-unit="°C" class="large"></div>
+                    </div>
+                    <div class="inline left-space">
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc2_day_of_week" class="darker"></div>
+                        <div data-type="weather" data-device="WetterBocholt" data-get="fc2_condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc2_low_c" data-unit="°C" class=""></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc2_high_c" data-unit="°C" class="large"></div>
+                    </div>
+                    <div class="inline left-space">
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc3_day_of_week" class="darker"></div>
+                        <div data-type="weather" data-device="WetterBocholt" data-get="fc3_condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc3_low_c" data-unit="°C" class=""></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc3_high_c" data-unit="°C" class="large"></div>
+                    </div>
+                    <div class="inline left-space">
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc4_day_of_week" class="darker"></div>
+                        <div data-type="weather" data-device="WetterBocholt" data-get="fc4_condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc4_low_c" data-unit="°C" class=""></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc4_high_c" data-unit="°C" class="large"></div>
+                    </div>
+                    <div class="inline left-space">
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc5_day_of_week" class="darker"></div>
+                        <div data-type="weather" data-device="WetterBocholt" data-get="fc5_condition" class="big"></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc5_low_c" data-unit="°C" class=""></div>
+                        <div data-type="label" data-device="WetterBocholt" data-get="fc5_high_c" data-unit="°C" class="large"></div>
+                    </div>
+                </div>
+            </li>
+            <li data-row="1" data-col="16" data-sizex="3" data-sizey="2">
+                <header>Test</header>
+            </li>
+            <!-- Wettervorhersage End -->
+            <!-- Gemeinsame Termine Start -->
+            <li data-row="4" data-col="1" data-sizex="5" data-sizey="2">
+                <div class="container">
+                    <header>Gemeinsame Termine</header>
+                    <table width="100%">
+                        <tr style="text-align: left;">
+                            <td style="padding-left: 5px; padding-top: 5px;">
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_001_bdate" class="inline" style="font-weight: bold;"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_001_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_001_summary" class="inline left-space"></div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td style="padding-left: 5px; padding-top: 3px;">
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_002_bdate" class="inline" style="font-weight: bold;"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_002_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_002_summary" class="inline left-space"></div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td style="padding-left: 5px; padding-top: 3px;">
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_003_bdate" class="inline" style="font-weight: bold;"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_003_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_003_summary" class="inline left-space"></div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td style="padding-left: 5px; padding-top: 3px;">
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_004_bdate" class="inline" style="font-weight: bold;"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_004_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_004_summary" class="inline left-space"></div>
+                            </td>
+                        </tr>
+                        <tr style="text-align: left;">
+                            <td style="padding-left: 5px; padding-top: 3px;">
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_005_bdate" class="inline" style="font-weight: bold;"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_005_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                            </td>
+                            <td>
+                                <div data-type="label" data-device="GemeinsamerKalenderView" data-get="t_005_summary" class="inline left-space"></div>
+                            </td>
+                        </tr>
+                    </table>
+            </li>
+            <!-- Gemeinsame Termine Ende -->
+            <!-- Termine Andre Start -->
+            <li data-row="4" data-col="6" data-sizex="5" data-sizey="1">
+                <header>Termine André</header>
+                <table width="100%">
+                    <tr style="text-align: left;">
+                        <td style="padding-left: 5px; padding-top: 5px;">
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_001_bdate" class="inline" style="font-weight: bold;"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_001_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_001_summary" class="inline left-space"></div>
+                        </td>
+                    </tr>
+                    <tr style="text-align: left;">
+                        <td style="padding-left: 5px; padding-top: 3px;">
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_002_bdate" class="inline" style="font-weight: bold;"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_002_btime" class="inline left-space" data-substitution="s/(:00)$//g" data-hide-on="00:00:00"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderAndreView" data-get="t_002_summary" class="inline left-space"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Termine Andre Ende -->
+            <!-- Termine Natalie Start -->
+            <li data-row="6" data-col="6" data-sizex="5" data-sizey="1">
+                <header>Termine Natalie</header>
+                <table width="100%">
+                    <tr style="text-align: left;">
+                        <td style="padding-left: 5px; padding-top: 5px;">
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_001_bdate" class="inline" style="font-weight: bold;"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_001_btime" class="inline left-space" data-substitution="s/(:00)$//g"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_001_summary" class="inline left-space"></div>
+                        </td>
+                    </tr>
+                    <tr style="text-align: left;">
+                        <td style="padding-left: 5px; padding-top: 3px;">
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_002_bdate" class="inline" style="font-weight: bold;"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_002_btime" class="inline left-space" data-substitution="s/(:00)$//g"></div>
+                        </td>
+                        <td>
+                            <div data-type="label" data-device="KalenderNatalieView" data-get="t_002_summary" class="inline left-space"></div>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <!-- Termine Natalie Ende -->
+            <!-- Abfallkalender Start -->
+            <li data-row="7" data-col="1" data-sizex="4" data-sizey="1">
+                <div class="container" style="padding-top: 8px;">
+                    <div data-device="myAbfall" data-type="symbol" data-get="Restmuell_days" data-icons='["fa-trash warn fa-blink","fa-trash warn"]' data-on-colors='["white","white"]' data-get-on='["0","2"]' data-background-icon="fa-circle" data-on-background-color="black" class="inline">
+                    </div>
+                    <div data-device="myAbfall" data-type="symbol" data-get="Biomuell_days" data-icons='["fa-trash warn fa-blink","fa-trash warn"]' data-on-colors='["white","white"]' data-get-on='["0","2"]' data-background-icon="fa-circle" data-on-background-color="SaddleBrown" class="inline">
+                    </div>
+                    <div data-device="myAbfall" data-type="symbol" data-get="GelberSack_days" data-icons='["fs-bag warn fa-blink","fs-bag warn"]' data-on-colors='["white","white"]' data-get-on='["0","2"]' data-background-icon="fa-circle" data-on-background-color="#ff9900" class="inline">
+                    </div>
+                    <div data-device="myAbfall" data-type="symbol" data-get="Papiertonne_days" data-icons='["fs-dustbin warn fa-blink","fs-dustbin warn"]' data-on-colors='["white","white"]' data-get-on='["0","2"]' data-background-icon="fa-circle" data-on-background-color="blue" class="inline">
+                    </div>
+                </div>
+            </li>
+            <!-- Abfallkalender Ende -->
+            <!-- Gäste-Wlan Start -->
+            <li data-row="7" data-col="1" data-sizex="2" data-sizey="1">
+                <header>Gäste-Wlan</header>
+                <div style="padding-top: 4px;" class="top-narrow">
+                    <div data-type="switch" data-device="FritzBox" data-get="box_guestWlan" data-warn="box_guestWlanCount" data-set="guestWlan" data-icon="-" data-background-icon="fa-wifi" class="warn tiny inline"></div>
+                    <div data-type="popup" data-height="190px" data-width="165px" class="inline">
+                        <div data-type="symbol" class="large" data-icon="fa-qrcode"></div>
+                        <div class="dialog">
+                            <div data-type="image" data-height="165px" data-width="165px" data-url="./GuestWifiQR.jpg"></div>
+                            <div data-type="label">BetterCallSaul4455</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <!-- Gäste-Wlan Ende -->
+            <!-- Verpasste Anrufe Start -->
+            <li data-row="7" data-col="3" data-sizex="2" data-sizey="1">
+                <header>Verpasste Anrufe</header>
+                <div style="padding-top: 4px;">
+                    <div data-type="symbol" data-device="duVerpassteAnrufe" data-icon="fa-phone warn" class="normal"></div>
+                </div>
+            </li>
+            <!-- Verpasste Anrufe Ende -->
+        </ul>
+        </div>
+</body>
+
+</html>
