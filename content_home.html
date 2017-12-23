@@ -6,9 +6,33 @@
     <div class="hbox">
       <div class="vbox phone-width">
         <div class="card lift">
-          <header>Komfort</header>    
+          <header>Komfort</header>
           <section>
             <div data-template="template_link.html" data-parameter='{"var_device":"overview_socket","var_link":"content_socket","var_name":"Steckdosen","var_state1":"on","var_text1":"an","var_state2":"off","var_text2":"aus","var_icon":"mi-power"}'></div>
+          </section>
+        </div>
+      </div>
+      <div class="vbox phone-width">
+        <div class="card lift">
+          <header>Abfall</header>
+          <section>
+            <div class="row">
+              <div class="cell left-align left-space">
+                <div data-type="symbol" data-device="myAbfall" data-get="next_days" data-icons='["fa-trash fa-blink","fa-trash"]' data-on-colors='["blue","blue"]' data-states='["1","2"]' class="big compressed">
+                </div>
+              </div>
+              <div class="cell-80 left-align">
+                <div data-type="label" data-device="myAbfall" data-get="next_text" class="big"></div>
+                <div class="inline">
+                    <div data-type="label" data-device="myAbfall" data-get="next_weekday" class="inline"></div>, der
+                    <div data-type="label" data-device="myAbfall" data-get="next_date" class="inline"></div>
+                  </div>
+              </div>
+              <div class="cell">
+              </div>
+              <div class="cell right-space">
+              </div>
+            </div>
           </section>
         </div>
       </div>

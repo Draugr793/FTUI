@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+	<!-- FHEM Tablet UI V2.6 -->
+	<!-- Content Page fuer Farbtemperatur / Helligkeitseinstellungen weißer HUE-Birnen / Gruppen -->
+
+  <?php $device = $_GET["dev"]; echo "Einstellungen für ", $device; ?>
+</head>
+
 <body>
   <div class="page" id="content_huew_settings">
     <div class="phone-back-btn">
@@ -9,8 +16,8 @@
 
     <div class="hbox">
       <div class="vbox phone-width">
-        <div class="card lift">
-          <header>var_name</header>
+        <div class="card lift" header="test">
+          <header><?php echo "$device";?></header>
           <section>
             <div class="row">
               <div class="cell left-align left-space">
@@ -29,6 +36,6 @@
         </div>
       </div>
     </div>
-</body>
+    </body>
 
 </html>
