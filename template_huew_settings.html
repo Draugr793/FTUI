@@ -3,28 +3,68 @@
 
 <head>
 	<!-- FHEM Tablet UI V2.6 -->
-	<!-- Template fuer Helligkeits und Farbeinstellungen von weißen HUE-Birnen -->
+	<!-- Template fuer Einstellungen von weißen HUE-Birnen / Gruppen -->
 </head>
 
 <body>
+
 	<div class="hbox">
 		<div class="vbox phone-width">
-			<div class="card lift">
+			<div class="card lift" header="test">
 				<header>var_name</header>
+
+				<!-- Status / Schalter -->
 				<section>
 					<div class="row">
+						<div class="cell-10 left-align left-space">
+							<div data-type="symbol" data-icon="mi-lightbulb_outline" data-color='["blue"]' class="big compressed"></div>
+						</div>
+						<div class="cell left-align left-space">
+							<div class="big">Power</div>
+							<div data-type="label" data-device="var_device" data-get="onoff" data-substitution='["0","Aus","1","An"]' class="top-narrow-2x"></div>
+						</div>
+						<div class="cell-90">
+						</div>
+						<div class="cell right-space">
+							<div data-type="checkbox" data-device="var_device" data-device="var_device" data-get="onoff" data-set-on="on" data-set-off="off" data-get-on="1" data-get-off="0" class="small blue"></div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Helligkeit -->
+				<section>
+					<div class="row">
+						<div class="cell-10 left-align left-space">
+							<div data-type="symbol" data-icon="mi-brightness_5" data-color="#aaaaaa" class="big compressed"></div>
+						</div>
 						<div class="cell left-align left-space">
 							<div class="big">Helligkeit</div>
-							<div data-type="label" data-device="var_device" data-get="pct" data-unit="%"></div>
+							<div data-type="label" data-device="var_device" data-get="pct" data-unit="%" class="top-narrow-2x"></div>
 						</div>
-						<div class="cell">
+						<div class="cell-90">
 						</div>
-						<div class="cell-50 right-space">
+						<div class="cell right-space">
 							<div data-type="slider" data-device="var_device" data-get="pct" data-set="pct" class="horizontal blue"></div>
 						</div>
 					</div>
 				</section>
+
+				<!-- Farbe / Farbtemperatur -->
 				<section>
+					<div class="row">
+						<div class="cell-10 left-align left-space">
+							<div data-type="symbol" data-icon="fa-thermometer-half" data-color="#aaaaaa" class="big compressed"></div>
+						</div>
+						<div class="cell left-align left-space">
+							<div class="big">Farbtemperatur</div>
+							<div data-type="label" data-device="var_device" data-get="ct" data-part="1" class="top-narrow-2x"></div>
+						</div>
+						<div class="cell-90">
+						</div>
+						<div class="cell right-space">
+							<div data-type="slider" data-device="var_device" data-get="ct" data-set="ct" data-max="454" data-min="154" data-part="1"  class="horizontal blue"></div>
+						</div>
+					</div>
 				</section>
 			</div>
 		</div>
