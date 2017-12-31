@@ -3,7 +3,7 @@
 
 <head>
 	<!-- FHEM Tablet UI V2.6 -->
-	<!-- Template fuer Einstellungen von weißen HUE-Birnen / Gruppen -->
+	<!-- Template fuer Einstellungen von farbige HUE-Birnen / Gruppen -->
 </head>
 
 <body>
@@ -52,17 +52,16 @@
 				<!-- Farbe / Farbtemperatur -->
 				<section>
 					<div class="row">
-						<div class="cell-10 left-align left-space">
-							<div data-type="symbol" data-icon="fa-thermometer-half" data-color="#aaaaaa" class="big compressed"></div>
+						<div class="cell-10 left-align left-space top-align">
+							<div data-type="symbol" data-icon="mi-color_lens" data-color="#aaaaaa" class="big compressed"></div>
 						</div>
-						<div class="cell left-align left-space">
-							<div class="big">Farbtemperatur</div>
-							<div data-type="label" data-device="var_device" data-get="ct" data-part="1" class="top-narrow-2x"></div>
+						<div class="cell left-align left-space top-align">
+							<div class="big">Farbe</div>
 						</div>
 						<div class="cell-90">
 						</div>
-						<div class="cell right-space">
-							<div data-type="slider" data-device="var_device" data-get="ct" data-set="ct" data-max="454" data-min="154" data-part="1"  class="horizontal blue"></div>
+						<div class="cell right-space right-align top-space">
+							<div data-type="colorwheel" data-device="var_device" data-get="rgb" data-set="rgb"></div>
 						</div>
 					</div>
 				</section>
